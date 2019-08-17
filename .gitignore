@@ -107,3 +107,6 @@ crashlytics.properties
 crashlytics-build.properties
 
 /*.zip
+
+# Mac OS metadata files
+**/.DS_Store
