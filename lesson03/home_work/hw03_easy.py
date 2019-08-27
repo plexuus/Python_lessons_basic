@@ -5,7 +5,10 @@
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
 def my_round(number, ndigits):
-    pass
+    if ((number * 10 ** (ndigits+1)) % 10 // 1) > 4:
+        return ((number * 10 ** ndigits) // 1 + 1) / 10 ** ndigits
+    else:
+        return (number * 10 ** ndigits) // 1 / 10 ** ndigits
 
 
 print(my_round(2.1234567, 5))
@@ -20,7 +23,12 @@ print(my_round(2.9999967, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
-    pass
+    if len(str(ticket_number)) == 6 and \
+            (ticket_number / 100000 // 1 + ticket_number / 10000 % 10 // 1 + ticket_number / 1000 % 10 // 1) == \
+            (ticket_number / 100 % 10 // 1 + ticket_number / 10 % 10 // 1 + ticket_number % 10 // 1):
+        return True
+
+    return False
 
 
 print(lucky_ticket(123006))
