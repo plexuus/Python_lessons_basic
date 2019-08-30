@@ -6,9 +6,27 @@
 # квадратами элементов исходного списка
 # [1, 2, 4, 0] --> [1, 4, 16, 0]
 
+
+def task1():
+    def exp_list(in_list: list):
+        return list(map(lambda x: x ** 2, in_list))
+
+    print(exp_list([1, 2, 4, 0]))
+
+
 # Задание-2:
 # Даны два списка фруктов.
 # Получить список фруктов, присутствующих в обоих исходных списках.
+
+def task2():
+    def duplicate_in_list(in_list1: list, in_list2: list):
+        return [item for item in in_list1 if item in in_list2]
+
+    print(duplicate_in_list(
+        ['яблоко', 'абрикос', 'авокадо', 'ананас', 'апельсин', 'банан'],
+        ['яблоко', 'абрикос', 'банан']
+    ))
+
 
 # Задание-3:
 # Дан список, заполненный произвольными числами.
@@ -16,3 +34,15 @@
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
+
+def task3():
+    def sort_list(in_list: list):
+        return [item for item in in_list if item > 0 and item % 3 == 0 and not item % 4 == 0]
+
+    print(sort_list([2, 10, -12, 2.5, 20, -11, 4, 4, 0, 9, 12]))
+
+
+# Демонстрация
+task1()
+task2()
+task3()
